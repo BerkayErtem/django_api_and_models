@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%block content%}
+<style>
+    table{
+        width:100px;
+        margin: 160px;
+        margin-right:60px;
+    }
+    tr.k{
+        background-color: grey;
+    }
+</style>
+
+<ul>
+    {% for item in data %}
+    <li>      
+        <p>{{ data }}</p>
+     </li>
+    {% endfor %}
+    
+<table style="width:1200px;" class="center" border="1">
+    
+    <tr class="k">
+        <th>ID</th>
+        <th>username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>email</th>
+        <th>Company Name</th>
+        <th>Company id</th>
+        <th>Subsidiary</th>
+    </tr>
+    {% for i in data2 %}
+    <tr>
+        <th><a href='/users/{{i.id}}'> {{i.id}}</th>
+        <th>{{i.username}}</th>
+        <th>{{i.first_name}}</th>
+        <th>{{i.last_name}}</th>
+        <th>{{i.email}}</th>
+        <th>{{i.company_name}}</th>
+        <th>{{i.company_name.id}}</th>
+        <th>{{i.subsidiary}}</th>
+    </tr>            
+    {%endfor%}
+</table>
+{%endblock%}

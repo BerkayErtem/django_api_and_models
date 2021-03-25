@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{%block content%}
+    <h1>Welcome {{user.username}}</h1>
+    <p>{{user.email}}</p>
+    {{user.subsidiary.name}}
+    {% if user.subsidiary.city == 'ist'%}
+            <p>Subsidiary city: Istanbul</p>
+    {%endif%}
+    
+    {% if user.is_superuser %}<h1>You are Superuser!</h1>
+        {% if user.is_authenticated%}
+            <p>You are authenticated</p>
+            <p>Your Company is {{user.company_name}}</p>
+            
+        {%endif%}
+    {% else %}
+        {% if user.is_authenticated%}
+            <p>You are authenticated</p>
+            <p>Your Company is {{user.company_name}}</p>
+            
+        {%endif%}
+
+        {% if user.is_staff%}
+            <p>You are staff</p>
+        {%endif%}
+
+        {% if user.is_arranger%}
+            <p>You are arranger</p>
+        {%endif%}
+
+        {% if user.is_active%}
+            <p>You are active</p>
+        {%endif%}
+
+        {% if user.is_worker%}
+            <p>You are worker</p>
+        {%endif%}
+        
+        
+    {% endif %}
+
+
+{%endblock%}

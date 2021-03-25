@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%block content%}
+  <style>
+#pr {text-align: center;}
+#tb {display:inline-block;}
+  </style>
+    
+    <form id='pr' action="" method="POST">
+      <h3>Login Form</h3>
+      {% csrf_token %}
+      <table id='tb'>
+        <tr>
+          <td><label for="id_username">Enter username</label></td>
+          <td><input type="text" id="id_username" name="username" /></td>
+        </tr>
+        <tr>
+          <td><label for="id_username">Enter password</label></td>
+          <td><input type="password" id="id_password" name="password" /></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button type="submit" class="btn btn-primary">Log In</button></td>
+        </tr>
+      </table>
+    </form>
+
+{%endblock%}

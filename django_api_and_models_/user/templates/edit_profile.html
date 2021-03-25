@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%block content%}
+{%load crispy_forms_tags%}
+<!DOCTYPE html>
+
+
+  <style>
+  #pr{
+    margin:80px;}
+  </style>
+
+    <div id='pr' class="contanier">
+      <form method="POST">
+        {% csrf_token %} {{ form|crispy }}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+{%endblock%}

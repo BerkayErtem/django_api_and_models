@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block content%}
+    <div class="content">
+      <div class="section-inner clearfix">
+        <h1>{{text}}</h1>
+        <p>
+          You are logged out. <a href="{% url 'login' %}">Click here</a> to
+          login again.
+         
+        </p>
+       <p>
+          To create account <a href="{% url 'register' %}">Click here</a>             
+        </p>
+        
+        
+      </div>
+    </div>
+{%endblock%}

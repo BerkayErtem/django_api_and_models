@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+  {%block content%}
+    <h3>IATA</h3>
+    <div><form action="http://127.0.0.1:8000/iata/" method="POST">{{ csrf_input }}
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td><label for="id_username">Enter iata</label></td>
+          <td><input type="text" id="id_username" name="iata" /></td>
+        </tr>
+          <td></td>
+          <td><input type="submit" value="Submit" /></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <form action="http://127.0.0.1:8000/hotels/" method="POST">
+    {% csrf_token %}
+    <table>
+      <tr>
+        <td><label for="id_username">Enter City Name</label></td>
+        <td><input type="text"  name="city" /></td>
+      </tr>
+      <tr>
+        <td><label for="id_username">Enter Country Name</label></td>
+        <td><input type="text"  name="country"/></td>
+      </tr>
+        <td></td>
+        <td><input type="submit" value="Submit" /></td>
+      </tr>
+    </table>
+  </form>
+  <p>{{hotel.name}}</p>
+  <p>{{hotel}}</p>
+  
+  <div style="overflow-x:auto;">      
+    <table class="table" cellspacing="2" cellpadding="2" border="1">
+        {% for i in code %}
+            <tr>
+                <th>{{i}}</th>        
+            </tr>            
+        {%endfor%}
+    </table>
+{%endblock%}

@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+{%block content%}
+<style>
+#tb{margin-left:50px;}
+#tbb{margin-left:75px;}
+</style>
+    <h3>FORM</h3>
+<div id='tb'>
+    <div><form action="" method="POST">{{ csrf_input }}
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td><label for="id_username">Enter iata</label></td>
+          <td><input  id='tbb' type="text" id="id_username" name="iata" /></td>
+        </tr>
+          <td></td>
+          <td><button type="submit"  id='tbb' class="btn btn-primary  btn-sm">Go</button></td>
+        </tr>
+      </table>
+    </form>
+    <p>{{res.name}} {{res.icao_code}}</p>
+  </div>
+  <form action="http://127.0.0.1:8000/hotels/" method="POST">
+    {% csrf_token %}
+    <table>
+      <tr>
+        <td><label for="id_username">Enter City Name</label></td>
+        <td><input type="text"  name="city" /></td>
+      </tr>
+      <tr>
+        <td><label for="id_username">Enter Country Name</label></td>
+        <td><input type="text"  name="country"/></td>
+      </tr>
+        <td></td>
+        <td><button type="submit" class="btn btn-secondary  btn-sm">Go</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
+<a class='btn btn-info  btn-sm' href={%url 'app'%}> See The List of Codes</a>
+
+<!--
+  <div style="overflow-x:auto;">      
+    <table class="table" cellspacing="2" cellpadding="2" border="1">
+        {% for i in code %}
+            <tr>
+                <th>{{i}}</th>        
+            </tr>            
+        {%endfor%}
+    </table>
+  </div>
+-->
+{%endblock%}
