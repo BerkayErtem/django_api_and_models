@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'django',
         'CLIENT': {
 
-           'host': 'mongodb+srv://root:root@cluster0.ugs1i.mongodb.net/django?retryWrites=true&w=majority',
+           'host': '',
            
            
 
